@@ -19,20 +19,19 @@ class App extends React.Component{
     this.setState({
       // counter : this.state.counter + 1,
       color : "blue"
-      
     });
   }
   /**
-   * counter increment function
+   * counter increment function with color changing
    */
   incrementCounter=()=>{
+    const newColor = this.state.color == "blue" ? "orange" : "blue";
     this.setState(
      {counter : this.state.counter + 1,
-      color : "orange"
-    }
-    )
-    
+      color : newColor,
+    }); 
   }
+
   render() {
     return (
       <div className="App">
