@@ -7,17 +7,34 @@ class App extends React.Component{
     super()
     this.state = {
       counter: 0,
-      color: "white",
+      color: " ",
     }
   }
   /**
    * using component lifecycle method to set state.
    */
+   
+  componentDidMount =()=>{
+  
+    this.setState({
+      // counter : this.state.counter + 1,
+      
+    });
+  }
+  /**
+   * counter increment function
+   */
+  incrementCounter=()=>{
+    this.setState(
+     {counter : this.state.counter + 1,}
+    )
+    
+  }
   render() {
     return (
       <div className="App">
-        <div className="box" onClick = "">
-                
+        <div className="box" onClick = {this.incrementCounter} style = {{background: this.state.color}}>
+             {this.state.counter}   
         </div>
       </div>
     );
