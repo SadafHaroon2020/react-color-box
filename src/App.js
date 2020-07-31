@@ -18,6 +18,7 @@ class App extends React.Component{
   
     this.setState({
       // counter : this.state.counter + 1,
+      color : "blue"
       
     });
   }
@@ -26,7 +27,9 @@ class App extends React.Component{
    */
   incrementCounter=()=>{
     this.setState(
-     {counter : this.state.counter + 1,}
+     {counter : this.state.counter + 1,
+      color : "orange"
+    }
     )
     
   }
