@@ -21,14 +21,24 @@ class App extends React.Component{
       color : "blue"
     });
   }
-  /**
+ /**generating random number between the range */
+  getRandom(min, max) {
+    return min + Math.floor(Math.random() * Math.floor(max-min));
+}
+ /**
    * counter increment function with color changing
    */
   incrementCounter=()=>{
-    const newColor = this.state.color == "blue" ? "orange" : "blue";
+   /**picking lower value to have dark background and max as 150 to get some brigher colors. */
+    let minColor = 0;
+    let maxColor = 150;
+    let colorCode = `rgb(${this.getRandom(minColor,maxColor)},${this.getRandom(minColor,maxColor)},${this.getRandom(minColor,maxColor)})`;
+    
+    // const newColor = this.state.color == "blue" ? "orange" : "blue";
+    
     this.setState(
      {counter : this.state.counter + 1,
-      color : newColor,
+      color : colorCode,
     }); 
   }
 
@@ -36,7 +46,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <div className="box" onClick = {this.incrementCounter} style = {{background: this.state.color}}>
-             {this.state.counter}   
+             Click Here {this.state.counter}   
         </div>
       </div>
     );
